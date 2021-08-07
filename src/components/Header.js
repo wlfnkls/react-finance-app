@@ -14,8 +14,8 @@ const Header = ({ showAddForm, formVisible, onAdd }) => {
   }
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 p-4 md:px-8">
-      <div className="flex justify-between align-middle items-center">
+    <header className="bg-white shadow-lg sticky top-0">
+      <div className="flex justify-between align-middle p-4 md:px-8 items-center md:max-w-5xl mx-auto">
         <h2 className="cursor-pointer">Finances</h2>
         <button onClick={showAddForm} className="bg-green-500 text-white rounded px-6 py-2 shadow hover:shadow-md hover:bg-green-600 active:transform active:scale-95 cursor-pointer">
           {formVisible ? 'Close' : 'Add'}
