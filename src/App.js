@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Entries from "./components/Entries";
+import Header from "./components/Header";
+import React, { useState } from 'react';
 
 function App() {
+  const [items, setItems] = useState(data);
+  const [formVisible, setformVisible] = useState(false)
+  
+  const showAddForm = () => {
+    setformVisible(!formVisible);
+  }
+
+  const addItem = (item) => {
+    const newItem = {...item};
+    setItems([...items, newItem]);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header formVisible={formVisible} showAddForm={showAddForm} onAdd={addItem} />
+      <main>
+        <Entries items={items} />
+      </main>
     </div>
   );
 }
+
+
+const data = [
+  { text: 'Salary', value: 2200 },
+  { text: 'Shopping', value: -70 },
+  { text: 'Rent', value: -600 },
+]
 
 export default App;
