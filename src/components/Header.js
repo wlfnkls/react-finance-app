@@ -15,7 +15,7 @@ const Header = ({ showAddForm, formVisible, onAdd }) => {
 
   return (
     <header className="bg-white shadow-lg sticky top-0">
-      <div className="flex justify-between align-middle p-4 md:px-8 items-center md:max-w-5xl mx-auto">
+      <div className="flex justify-between align-middle p-4 md:px-8 items-center">
         <h2 className="cursor-pointer font-bold text-2xl text-gray-700 uppercase">
           Finances
         </h2>
